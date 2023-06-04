@@ -1,11 +1,9 @@
 package sarfflow.infstorage;
 
 import net.fabricmc.api.ModInitializer;
-
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
-import net.minecraft.block.Block;
 import net.minecraft.block.Material;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.item.BlockItem;
@@ -25,7 +23,7 @@ public class ExampleMod implements ModInitializer {
     public static final Logger LOGGER = LoggerFactory.getLogger("inf-storage");
     public static final String modID = "inf_storage";
 
-    public static final InfChestBlock INF_CHEST = new InfChestBlock(FabricBlockSettings.of(Material.STONE).strength(3.0f, Float.MAX_VALUE).luminance(5));
+    public static final InfChestBlock INF_CHEST = new InfChestBlock(FabricBlockSettings.of(Material.STONE).strength(10.0f, Float.MAX_VALUE).luminance(5));
 
     public static final BlockEntityType<InfChestBlockEntity> INF_CHEST_BLOCK_ENTITY = Registry.register(
             Registry.BLOCK_ENTITY_TYPE,

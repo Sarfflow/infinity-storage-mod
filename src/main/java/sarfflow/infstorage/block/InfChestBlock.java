@@ -9,15 +9,18 @@ import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtList;
 import net.minecraft.text.Text;
+import net.minecraft.util.ActionResult;
 import net.minecraft.util.Formatting;
+import net.minecraft.util.Hand;
+import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
-import net.minecraft.world.explosion.Explosion;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
@@ -32,17 +35,14 @@ public class InfChestBlock extends Block implements BlockEntityProvider {
         return new InfChestBlockEntity(pos, state);
     }
 
-//    @Override
-//    public ActionResult onUse(BlockState blockState, World world, BlockPos blockPos, PlayerEntity player, Hand hand, BlockHitResult blockHitResult) {
-//        if (world.isClient) return ActionResult.SUCCESS;
-//        Inventory blockEntity = (Inventory) world.getBlockEntity(blockPos);
-//        if (blockEntity instanceof InfChestBlockEntity infChestBlockEntity) {
-//            System.out.println("infChestBlockEntity!");
-//        }
-//        System.out.println("Click!");
-//
-//        return ActionResult.SUCCESS;
-//    }
+    @Override
+    public ActionResult onUse(BlockState blockState, World world, BlockPos blockPos, PlayerEntity player, Hand hand, BlockHitResult blockHitResult) {
+        if (world.isClient) return ActionResult.SUCCESS;
+        if (world.getBlockEntity(blockPos) instanceof InfChestBlockEntity infChestBlockEntity) {
+            player.sendMessage(Text.translatable("block.inf_storage.inf_chest.tooltip", infChestBlockEntity.usedCount()).formatted(Formatting.LIGHT_PURPLE), true);
+        }
+        return ActionResult.SUCCESS;
+    }
 
     @Override
     public void onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player) {

@@ -110,4 +110,8 @@ public class InfChestBlockEntity extends BlockEntity implements InfInventory {
         return empty;
     }
 
+    public int usedCount(){
+        return this.items.size() - emptyCount();
+    }
+
 }
