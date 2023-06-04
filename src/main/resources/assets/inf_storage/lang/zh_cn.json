@@ -1,0 +1,4 @@
+{
+  "block.inf_storage.inf_chest": "无限容器",
+  "block.inf_storage.inf_chest.tooltip": "已使用插槽：%d"
+}

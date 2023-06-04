@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "zWz",
+    "WCW",
+    "zWz"
+  ],
+  "key": {
+    "W": {
+      "item": "minecraft:crying_obsidian"
+    },
+    "C": {
+      "item": "minecraft:ender_pearl"
+    },
+    "z": {
+      "item": "minecraft:amethyst_shard"
+    }
+  },
+  "result": {
+    "item": "inf_storage:inf_chest",
+    "count": 1
+  }
+}

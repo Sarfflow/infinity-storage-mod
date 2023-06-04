@@ -1,0 +1,4 @@
+{
+  "block.inf_storage.inf_chest": "Infinity Chest",
+  "block.inf_storage.inf_chest.tooltip": "Number of stored slots: %d"
+}
